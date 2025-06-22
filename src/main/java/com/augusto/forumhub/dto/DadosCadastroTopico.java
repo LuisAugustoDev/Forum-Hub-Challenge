@@ -9,7 +9,7 @@ public record DadosCadastroTopico(
         @NotBlank
         String mensagem,
         @NotNull
-        Long autor_id,
+        Long autorId,
         @NotNull
-        Long curso_id) {
+        Long cursoId) {
 }

@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.web.bind.annotation.Mapping;
 
 import java.time.LocalDateTime;
 
@@ -23,16 +24,16 @@ public class Topico {
     private String mensagem;
     private Boolean estadoTopico;
     private LocalDateTime dataCriacao;
-    private Long autorId;
-    private Long cursoId;
+    @ManyToOne
+    private Usuario autor;
+    @ManyToOne
+    private Curso curso;
 
     public Topico(DadosCadastroTopico dados){
         this.titulo = dados.titulo();
         this.mensagem = dados.mensagem();
         this.estadoTopico = true;
         this.dataCriacao = LocalDateTime.now();
-        this.autorId = dados.autor_id();
-        this.cursoId = dados.curso_id();
     }
 
     public void atualizarInformacoes(DadosAtualizacaoTopico dados){
@@ -45,12 +46,14 @@ public class Topico {
         if(dados.estadoTopico() != null) {
             this.estadoTopico = dados.estadoTopico();
         }
-        if(dados.autorId() != null) {
-            this.autorId = dados.autorId();
-        }
-        if(dados.cursoId() != null) {
-            this.cursoId = dados.cursoId();
-        }
+    }
+
+    public void setAutor(Usuario autor) {
+        this.autor = autor;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
     }
 
     public void deletar(){

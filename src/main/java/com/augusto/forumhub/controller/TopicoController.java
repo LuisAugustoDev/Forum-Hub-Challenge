@@ -6,6 +6,7 @@ import com.augusto.forumhub.dto.DadosDetalhamentoTopico;
 import com.augusto.forumhub.dto.DadosRetornoTopico;
 import com.augusto.forumhub.model.Topico;
 import com.augusto.forumhub.service.*;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -18,6 +19,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("topicos")
+@SecurityRequirement(name = "bearer-key")
 public class TopicoController {
 
     @Autowired

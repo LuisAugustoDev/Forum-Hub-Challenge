@@ -1,6 +1,6 @@
 package com.augusto.forumhub.service;
 
-import com.augusto.forumhub.exception.ValidacaoException;
+import com.augusto.forumhub.infra.exception.ValidacaoException;
 import com.augusto.forumhub.model.Topico;
 import com.augusto.forumhub.repository.TopicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;

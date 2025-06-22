@@ -1,7 +1,7 @@
 package com.augusto.forumhub.validacao;
 
 import com.augusto.forumhub.dto.DadosCadastroTopico;
-import com.augusto.forumhub.exception.ValidacaoException;
+import com.augusto.forumhub.infra.exception.ValidacaoException;
 import com.augusto.forumhub.repository.TopicoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
